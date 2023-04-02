@@ -36,17 +36,41 @@
 				<!-- Two -->
 					<section id="two">
 						<h2>Beta versjon av Kretskort til Bachelor<h2/>
-						<img src="" alt="" style="max-width: 100%;">
 						<p>Dette er arbeidsfilene fra Eagle<p/>
 						<a href="assets/DigiFab-Oblig4.zip" download>Last ned PCB Prosjekt Zip, inkludert Gerber filer</a>
 						<br />
-						<h2><h2/>
-						<p><b/></p>
-						<img src="" alt="" style="max-width: 100%;"> <br />
-						<img src="" alt="" style="max-width: 100%;"> <br />
-						<p><b/><p/>
-						<img src="" alt="" style="max-width: 100%;"> <br />
-						<img src="" alt="" style="max-width: 100%;"> <br />
+						<h2>Fremgang<h2/>
+						<p>Jeg begynte ikke arbeid på oppgaven før torsdag siste uken mot den originale fristen, og dette rett etter PSUen til min stasjonære PC så ut til å ha dødd. 
+						Etter å ha sendt denne på reperasjon satt jeg i gang på min 8 år gamle laptop, som slet selv med å loade Eagle. 
+						Dette gikk generelt sett kjempe treigt, men jeg slet også litt med å finne de "parts-library" delene jeg trengte for å fullføre oppgaven.
+						>br />Etter mye strev måtte jeg krype til korset og be om utsatt frist på oppgaven.</p>
+						<br />
+						<p>Til slutt kom jeg i gang med oppgaven, og fikk endelig tak i en library pakke med en RC522"del", helt lik den vi bruker i bachelor oppgaven min.
+						<br />Jeg fikk også klar gjort at de partsene jeg hadde tilgang til for LCD 16X2 skjermer fungerte for vår "adm1602k-nsw-fbs" skjerm, og vårt pentiometer.</p>
+						<img src="<img src="images/rfid-lib.png" alt="" style="max-width: 100%;">" alt="" style="max-width: 100%;"> <br />
+						<p>Etter en god stund på youtube med tutorials fra kanaler som "Kitflix" var jeg i gang med schematicen til designet mitt. Det skal sies at jeg husket svært lite av detaljene fra undervisnngen i Februar, dog jeg husket at jeg ikke syntes det var så komplisert da.
+						<b/>Jeg er ganske så misfornøyd med koblingen jeg har gjort av ledninger på dette stadiet, ettersom dette skapte en del problemer når jeg skulle "route" kretsene i "board" filen min.<p/>
+						<img src="images/schematic.png" alt="" style="max-width: 100%;"> <br />
+						<p>De fire komponentene brukt er en Arduino Mega, En RC522 RFID leser, et Pentiometer og en 16x2 LCD skjerm.
+						<br />LCD Skjermen bruker Arduino Megaen sin 5Volts pin, og RFID-leseren bruker 3Volts pinnen.
+						<br />GND pinner er alltid koblet til GND, så never det ikke case by case.</p>
+						<p>Skjermen og Pentiometeret er koblet sammen i skjerments Contrast&#40;Display Contrast&#41; pin.
+						<br />Skjermen er koblet til Arduino Megaen sin digitale pins fra 4 til 7, med samme pins på skjermen.
+						<br />Skjermens "Enable" pin er koblet til Arduinoens digitale pin nr2. 
+						<br />Skjermens RS pin&#40;Register Select&#41; er koblet til Arduinoens pin nr1.
+						<br />Skjermens RW pin&#40;Read Write&#41; er koblet til GND.
+						<br />Skjermens Cathode pin er koblet til GND og Anode til 5Volts.
+						<p/>
+						<br/>
+						<p>RFID Leseren sin RST pin er koblet til Arduinoens digitale pin nr9. 
+						<br />RFID Leseren sin IRQ er ikke koblet til Arduinoen.
+						<br />RFID Leseren sin MISO pin er koblet til Arduinoens digitale pin nr12
+						<br />RFID Leseren sin MOSI pin er koblet til Arduinoens digitale pin nr11
+						<br />RFID Leseren sin SCK pin er koblet til Arduinoens digitale pin nr13
+						<br />RFID Leseren sin SDA pin er koblet til Arduinoens digitale pin nr10</p>
+						<br />
+						<p>Etter litt flere tutorials prøvde jeg med på å gjøre klart et board som kunne gjøres til Gerber filer.</p>
+						<img src="images/board-routed.png" alt="" style="max-width: 100%;"> <br />
 						<b><b/>
 						<p><p/> 
 						<h4><h4/>
